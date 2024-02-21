@@ -1,0 +1,6 @@
+{
+  "name":"com.xelareip.extensions",
+  "version": "0.0.1",
+  "description": "Simple utility extension functions for c# code",
+  "displayName": "Xelareip C# extensions"
+}
