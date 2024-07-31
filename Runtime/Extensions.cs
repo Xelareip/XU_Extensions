@@ -23,5 +23,26 @@ namespace Xelareip
         {
             return list[Random.Range(0, list.Count)];
         }
+
+        public static int PickRandomWeight(this List<int> list)
+        {
+            int total = 0;
+            foreach (int i in list)
+            {
+                total += i;
+            }
+
+            int rand = Random.Range(0, total);
+
+            for (int i = 0; i < list.Count; ++i)
+            {
+                rand -= list[i];
+				if (rand < 0)
+				{
+					return i;
+				}
+            }
+			return list.Count - 1;
+        }
     }
 }
