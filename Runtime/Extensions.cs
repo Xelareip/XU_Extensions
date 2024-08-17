@@ -44,5 +44,17 @@ namespace Xelareip
             }
 			return list.Count - 1;
         }
+
+        public static void SmartDestroy(this GameObject gameObject)
+        {
+            if (Application.isPlaying)
+            {
+                Object.Destroy(gameObject);
+            }
+            else
+            {
+                Object.DestroyImmediate(gameObject);
+            }
+        }
     }
 }
