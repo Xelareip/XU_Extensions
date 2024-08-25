@@ -24,6 +24,11 @@ namespace Xelareip
             return list[Random.Range(0, list.Count)];
         }
 
+        public static T PickRandom<T>(this IReadOnlyList<T> list)
+        {
+            return list[Random.Range(0, list.Count)];
+        }
+
         public static int PickRandomWeight(this List<int> list)
         {
             int total = 0;
