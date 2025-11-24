@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Xelareip
@@ -48,6 +49,12 @@ namespace Xelareip
 				}
             }
 			return list.Count - 1;
+        }
+
+        public static TV PickRandom<TK, TV>(this Dictionary<TK, TV> dictionary)
+        {
+            var key = dictionary.Keys.ToList()[Random.Range(0, dictionary.Keys.Count)];
+            return dictionary[key];
         }
 
         public static void SmartDestroy(this GameObject gameObject)
